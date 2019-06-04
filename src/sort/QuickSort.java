@@ -9,7 +9,7 @@ public class QuickSort implements IArraySort {
 
     @Override
     public int[] sort(int[] sourceArray) throws Exception {
-        if(sourceArray == null || sourceArray.length <= 1){
+        if (sourceArray == null || sourceArray.length <= 1) {
             return sourceArray;
         }
         int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
@@ -17,13 +17,22 @@ public class QuickSort implements IArraySort {
         return quickSort(arr, 0, arr.length - 1);
     }
 
+//    private int[] quickSort(int[] arr, int left, int right) {
+//        if (left < right) {//重要
+//            int mid = partition(arr, left, right);
+//            quickSort(arr, left, mid - 1);
+//            quickSort(arr, mid + 1, right);
+//        }
+//
+//        return arr;
+//    }
+
     private int[] quickSort(int[] arr, int left, int right){
-        if(left < right){//重要
+        if(left < right){
             int mid = partition(arr, left, right);
             quickSort(arr, left, mid-1);
             quickSort(arr, mid+1, right);
         }
-
         return arr;
     }
 
@@ -43,7 +52,8 @@ public class QuickSort implements IArraySort {
     }
 
     //这种方法要比上一种要好理解，但是也是很有难度的，相对是最好理解的
-    private int partition(int[] arr, int low, int high) {//重要//基准值左边小，右边大
+    //这种交替方法真的很牛
+    private int partition1(int[] arr, int low, int high) {//重要//基准值左边小，右边大
         int pivot = arr[low];
 
         while (low < high) {
@@ -56,6 +66,20 @@ public class QuickSort implements IArraySort {
             arr[high] = arr[low];//从左往右找比基准值大的元素
         }
         arr[low] = pivot;
+
+        return low;
+    }
+
+    //这种更好理解一点
+    private int partition(int[] arr, int low, int high) {//重要//基准值左边小，右边大
+        int pivot = arr[low];
+        while(low < high){
+            while(low < high && arr[high] >= pivot) high--;
+            arr[low] = arr[high];
+            while(low < high && arr[low] <= pivot) low++;
+            arr[high] = arr[low];
+        }
+        arr[low] = pivot;//arr[low]=pivot;return low;也一样，因为最后两指针会碰撞
 
         return low;
     }

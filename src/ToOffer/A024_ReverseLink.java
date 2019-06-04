@@ -12,6 +12,10 @@ public class A024_ReverseLink {
     public static void main(String[] args) {
         A024_ReverseLink ins = new A024_ReverseLink();
         head = new ListNode(1);
+
+        ListNode next =new ListNode(2);
+        head.next = next;
+
         ins.addNode(new ListNode(2));
         ins.addNode(new ListNode(3));
         ins.addNode(new ListNode(5));
