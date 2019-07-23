@@ -18,7 +18,7 @@ public class BubbleSort implements IArraySort {
             boolean flag = true;
 
             for (int j = 0; j < arr.length - i; j++) {//精彩
-                if (arr[j] > arr[j + 1]) {
+                if (arr[j] > arr[j + 1]) {//将大的元素冒泡到后面
                     Sort.swap(arr, j, j+1);
 
                     flag = false;

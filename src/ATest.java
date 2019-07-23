@@ -2,6 +2,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import util.Util;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -215,11 +216,21 @@ public class ATest {
 
         //del("swumneiiii");
         //System.out.println(0 + 'a');
+//        System.out.println(fn(10));
+//        BigDecimal b = new BigDecimal(1);
+//        String sb = null;
+//        String.valueOf(sb);
+
+        System.out.println(" ".equals(" "));
+
+    }
+    private static int fn(int n){
+        return n==1 ? 1 : fn(n-1)+n;
     }
 
-    private static int gcd(int a, int b){
-        return b==0 ? a : gcd(b, a%b);
-    }
+//    private static int gcd(int a, int b){
+//        return b==0 ? a : gcd(b, a%b);
+//    }
 
     /*private static void add(int up, int down){
         int a1 = pre.get(0), b1 = pre.get(1);

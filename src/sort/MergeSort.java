@@ -21,6 +21,7 @@ public class MergeSort implements IArraySort {
         int[] left = Arrays.copyOfRange(arr, 0, middle);
         int[] right = Arrays.copyOfRange(arr, middle, arr.length);
 
+        //sort的返回值是merge后有序数组
         return merge(sort(left), sort(right));
     }
 

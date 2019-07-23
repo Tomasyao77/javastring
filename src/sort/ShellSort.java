@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 希尔排序
- * 好难理解
+ * 缩小增量排序
  */
 public class ShellSort implements IArraySort {
 

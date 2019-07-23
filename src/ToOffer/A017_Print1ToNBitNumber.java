@@ -28,7 +28,7 @@ public class A017_Print1ToNBitNumber {
         System.out.println((char) (1+'0'));//1*/
 
         //字符串加法
-        int[] number = new int[5];
+        int[] number = new int[n];
         while (!increment(number)) {
             print(number);
         }
@@ -82,7 +82,7 @@ public class A017_Print1ToNBitNumber {
         int carry = 0;
 
         for (int i = number.length - 1; i >= 0; i--) {
-            int sum = number[i] + carry;
+            int sum = number[i] + carry;//0
             if (i == number.length - 1) {//个位数
                 sum++;
             }

@@ -30,7 +30,7 @@ public class A011_SpinArrayMinNumber {
             }
             mid = (left + right) / 2;//二分
             //如果下标为left,right和mid的三个数字相等,则只能顺序查找
-            if (array[left] == array[mid] && array[mid] == array[right]) {
+            if (array[left] == array[mid] && array[mid] == array[right]) {//这一点非常重要
                 return minInOrder(array, left, right);
             } else {
                 if (array[left] <= array[mid]) {
@@ -74,7 +74,7 @@ public class A011_SpinArrayMinNumber {
         }
         int result = array[left];
         for (int i = left + 1; i <= right; i++) {
-            if(result > array[i]){
+            if(result > array[i]){//找到第一个较小的
                 result = array[i];
             }
         }

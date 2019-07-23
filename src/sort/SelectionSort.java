@@ -15,7 +15,7 @@ public class SelectionSort implements IArraySort {
         for (int i = 0; i < arr.length - 1; i++) {
             int min = i;
 
-            // 每轮需要比较的次数 N-i //? N-j吧
+            // 每轮需要比较的次数 N-i //N+1-i-1
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] < arr[min]) {
                     // 记录目前能找到的最小值元素的下标
@@ -24,7 +24,7 @@ public class SelectionSort implements IArraySort {
             }
 
             // 将找到的最小值和i位置所在的值进行交换
-            if (i != min) {
+            if (i != min) {//如果当前元素就是最小元素就不需要再交换了
                 Sort.swap(arr, i, min);
             }
 
